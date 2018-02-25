@@ -6,4 +6,9 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>virtualtestlab</name>
+
+    <modules>
+        <module>core</module>
+    </modules>
+
 </project>
