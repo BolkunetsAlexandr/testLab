@@ -20,13 +20,14 @@ public class PassingFact {
     private Date passingDate;
 
     @ManyToOne
-    @Column(name = "PEOPLE_ID")
+    @JoinColumn(name = "PEOPLE_ID")
     private Person person;
 
     @ManyToOne
     private Methodics methodics;
 
     @OneToMany
+    @JoinColumn(name = "SCALE_VALUE_ID")
     private List<ScaleValue> scaleValues;
 
     public Integer getId() {

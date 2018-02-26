@@ -1,4 +1,6 @@
-package com.senla.bolkunets.virtualtestlab.domain.users;
+package com.senla.bolkunets.virtualtestlab.domain.fake;
+
+import com.senla.bolkunets.virtualtestlab.domain.fake.Person;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,8 +20,7 @@ public class Organization {
     @Column(name = "NUMBER_EMPLS")
     private Integer numberEmployees;
 
-    @OneToMany
-    @JoinColumn(name = "ORGANIZATION_FK_ID")
+    @OneToMany(mappedBy = "organization")
     private List<Person> employees;
 
     public Integer getId() {

@@ -3,13 +3,14 @@ package com.senla.bolkunets.virtualtestlab.dao;
 import java.util.List;
 
 public interface GenericDao<PKey, Entity> {
-    Entity create(Entity entity);
+    void create(Entity entity);
 
-    Entity update(Entity entity);
+    Entity read(PKey id);
 
-    Entity delete(Entity entity);
+    void update(Entity entity);
+
+    void delete(Entity entity);
 
     List<Entity> readAll();
 
-    Entity findById(PKey id);
 }

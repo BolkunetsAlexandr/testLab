@@ -9,6 +9,7 @@
 
     <modules>
         <module>virtualtestlab-api</module>
+        <module>virtualtestlab-dal</module>
     </modules>
 
 </project>
