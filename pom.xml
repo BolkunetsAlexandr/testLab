@@ -8,7 +8,7 @@
     <name>virtualtestlab</name>
 
     <modules>
-        <module>core</module>
+        <module>virtualtestlab-api</module>
     </modules>
 
 </project>

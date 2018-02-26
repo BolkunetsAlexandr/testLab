@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.senla.bolkunets</groupId>
-    <artifactId>virtualtestlab-core</artifactId>
+    <artifactId>virtualtestlab-api</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -21,4 +21,5 @@
             <version>2.2</version>
         </dependency>
     </dependencies>
+    
 </project>
