@@ -1,7 +1,5 @@
 package com.senla.bolkunets.virtualtestlab.domain.users;
 
-import com.senla.bolkunets.virtualtestlab.domain.userprofile.UserProfile;
-
 import javax.persistence.*;
 import java.util.List;
 
