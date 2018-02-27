@@ -10,6 +10,9 @@ public class Question {
     @Column(name = "ID")
     private Integer id;
 
+    @Column(name = "QUESTION_NUMBER")
+    private Integer number;
+
     @Column(name = "TEXT", nullable = false)
     private String text;
 
@@ -28,4 +31,14 @@ public class Question {
     public void setText(String text) {
         this.text = text;
     }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+
 }

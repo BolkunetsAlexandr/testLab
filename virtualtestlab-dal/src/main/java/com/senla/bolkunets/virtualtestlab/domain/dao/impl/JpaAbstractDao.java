@@ -1,9 +1,7 @@
-package com.senla.bolkunets.virtualtestlab.dao;
+package com.senla.bolkunets.virtualtestlab.domain.dao.impl;
 
-import org.apache.log4j.Logger;
+import com.senla.bolkunets.virtualtestlab.domain.dao.GenericDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;

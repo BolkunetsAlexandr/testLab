@@ -20,7 +20,7 @@ public class Methodics {
     @Column(name = "R_BORDER", nullable = false)
     private Integer rightValueBorder;
 
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "METHODICS_ID")
     private List<Question> questions;
 

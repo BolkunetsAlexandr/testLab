@@ -1,4 +1,4 @@
-package com.senla.bolkunets.virtualtestlab.dao;
+package com.senla.bolkunets.virtualtestlab.domain.dao;
 
 import com.senla.bolkunets.virtualtestlab.domain.model.users.Person;
 

@@ -1,5 +1,6 @@
 package com.senla.bolkunets.virtualtestlab.domain.model.methodics.description;
 
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class MethodicsKey {
     @Column(name = "SCALE_NAME", nullable = false)
     private String nameScale;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "KEY_ID")
     private List<Question> questions;
 
