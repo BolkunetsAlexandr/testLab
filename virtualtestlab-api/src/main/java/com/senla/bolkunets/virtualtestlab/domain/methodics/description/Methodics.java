@@ -11,13 +11,13 @@ public class Methodics {
     @GeneratedValue
     @Column(name = "ID")
     private Integer id;
-    @Column(name = "NAME")
+    @Column(name = "NAME", nullable = false)
     private String name;
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", nullable = false)
     private String description;
-    @Column(name = "L_BORDER")
+    @Column(name = "L_BORDER", nullable = false)
     private Integer leftValueBorder;
-    @Column(name = "R_BORDER")
+    @Column(name = "R_BORDER", nullable = false)
     private Integer rightValueBorder;
 
     @OneToMany

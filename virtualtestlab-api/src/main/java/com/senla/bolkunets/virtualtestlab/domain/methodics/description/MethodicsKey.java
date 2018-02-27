@@ -11,7 +11,7 @@ public class MethodicsKey {
     @Column(name = "ID")
     private Integer id;
 
-    @Column(name = "SCALE_NAME")
+    @Column(name = "SCALE_NAME", nullable = false)
     private String nameScale;
 
     @OneToMany

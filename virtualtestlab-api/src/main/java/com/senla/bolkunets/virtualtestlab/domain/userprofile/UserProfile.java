@@ -10,13 +10,14 @@ public class UserProfile {
     @Column(name = "ID")
     private Integer id;
 
-    @Column(name = "LOGIN")
+    @Column(name = "LOGIN", nullable = false, unique = true)
     private String login;
 
-    @Column(name = "PASSWORD")
+    @Column(name = "PASSWORD", nullable = false)
     private String password;
 
-    @Column(name = "ROLE")
+    @Column(name = "ROLE", nullable = false)
+    @Enumerated(value = EnumType.STRING)
     private RoleUser roleUser;
 
     public Integer getId() {

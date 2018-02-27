@@ -10,7 +10,7 @@ public class Question {
     @Column(name = "ID")
     private Integer id;
 
-    @Column(name = "TEXT")
+    @Column(name = "TEXT", nullable = false)
     private String text;
 
     public Integer getId() {

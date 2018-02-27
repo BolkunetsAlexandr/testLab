@@ -7,6 +7,9 @@
     <context:property-placeholder location="hibernate.properties"></context:property-placeholder>
 
     <beans>
+
+        <context:component-scan base-package="com.senla.bolkunets.virtualtestlab.dao"/>
+
         <bean id="myEmf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" >
             <property name="dataSource" ref="dataSource"/>
             <property name="packagesToScan" value="com.senla.bolkunets.virtualtestlab.domain"/>
@@ -34,8 +37,6 @@
         <tx:annotation-driven/>
 
         <bean id="persistenceExceptionTranslationPostProcessor" class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
-
-        <context:annotation-config/>
 
     </beans>
 

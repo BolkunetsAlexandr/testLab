@@ -15,16 +15,16 @@ public class PassingFact {
     @Column(name = "ID")
     private Integer id;
 
-    @Column(name = "DATE")
+    @Column(name = "DATE", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date passingDate;
 
     @ManyToOne
-    @JoinColumn(name = "PEOPLE_ID")
+    @JoinColumn(name = "PEOPLE_ID", nullable = false)
     private Person person;
 
     @ManyToOne
-    @JoinColumn(name = "METHODICS_ID")
+    @JoinColumn(name = "METHODICS_ID", nullable = false)
     private Methodics methodics;
 
     @OneToMany
