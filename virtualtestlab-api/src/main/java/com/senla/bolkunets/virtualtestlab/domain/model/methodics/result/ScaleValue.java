@@ -1,7 +1,7 @@
-package com.senla.bolkunets.virtualtestlab.domain.methodics.result;
+package com.senla.bolkunets.virtualtestlab.domain.model.methodics.result;
 
 
-import com.senla.bolkunets.virtualtestlab.domain.methodics.description.MethodicsKey;
+import com.senla.bolkunets.virtualtestlab.domain.model.methodics.description.MethodicsKey;
 
 import javax.persistence.*;
 

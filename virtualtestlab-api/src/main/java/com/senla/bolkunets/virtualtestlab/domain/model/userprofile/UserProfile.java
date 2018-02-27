@@ -1,4 +1,4 @@
-package com.senla.bolkunets.virtualtestlab.domain.userprofile;
+package com.senla.bolkunets.virtualtestlab.domain.model.userprofile;
 
 import javax.persistence.*;
 

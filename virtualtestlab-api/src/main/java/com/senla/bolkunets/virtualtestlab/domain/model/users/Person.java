@@ -1,7 +1,7 @@
-package com.senla.bolkunets.virtualtestlab.domain.users;
+package com.senla.bolkunets.virtualtestlab.domain.model.users;
 
 
-import com.senla.bolkunets.virtualtestlab.domain.methodics.result.PassingFact;
+import com.senla.bolkunets.virtualtestlab.domain.model.methodics.result.PassingFact;
 
 import javax.persistence.*;
 import java.util.List;

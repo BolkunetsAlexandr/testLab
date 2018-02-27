@@ -1,8 +1,10 @@
 package com.senla.bolkunets.virtualtestlab.dao;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -20,6 +22,7 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
         this.type = type;
     }
 
+    @Transactional
     public void create(Entity entity) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
@@ -29,6 +32,7 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
         entityManager.close();
     }
 
+    @Transactional
     public Entity read(PKey id) {
         Entity entity;
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -37,6 +41,7 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
         return entity;
     }
 
+    @Transactional
     public void update(Entity entity) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
@@ -46,6 +51,7 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
         entityManager.close();
     }
 
+    @Transactional
     public void delete(Entity entity) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction entityTransaction = entityManager.getTransaction();
@@ -55,6 +61,7 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
         entityManager.close();
     }
 
+    @Transactional
     public List<Entity> readAll() {
         List<Entity> entities = null;
         EntityManager entityManager = entityManagerFactory.createEntityManager();

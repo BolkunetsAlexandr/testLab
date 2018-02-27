@@ -1,6 +1,6 @@
 package com.senla.bolkunets.virtualtestlab.dao;
 
-import com.senla.bolkunets.virtualtestlab.domain.userprofile.UserProfile;
+import com.senla.bolkunets.virtualtestlab.domain.model.userprofile.UserProfile;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

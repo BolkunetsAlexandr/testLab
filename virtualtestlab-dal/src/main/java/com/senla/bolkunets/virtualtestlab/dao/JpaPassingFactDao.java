@@ -1,6 +1,6 @@
 package com.senla.bolkunets.virtualtestlab.dao;
 
-import com.senla.bolkunets.virtualtestlab.domain.methodics.result.PassingFact;
+import com.senla.bolkunets.virtualtestlab.domain.model.methodics.result.PassingFact;
 import org.springframework.stereotype.Repository;
 
 @Repository

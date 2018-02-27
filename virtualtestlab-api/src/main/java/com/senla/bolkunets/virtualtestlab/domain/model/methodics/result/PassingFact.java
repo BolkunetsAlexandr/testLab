@@ -1,7 +1,7 @@
-package com.senla.bolkunets.virtualtestlab.domain.methodics.result;
+package com.senla.bolkunets.virtualtestlab.domain.model.methodics.result;
 
-import com.senla.bolkunets.virtualtestlab.domain.methodics.description.Methodics;
-import com.senla.bolkunets.virtualtestlab.domain.users.Person;
+import com.senla.bolkunets.virtualtestlab.domain.model.methodics.description.Methodics;
+import com.senla.bolkunets.virtualtestlab.domain.model.users.Person;
 
 import javax.persistence.*;
 import java.util.Date;

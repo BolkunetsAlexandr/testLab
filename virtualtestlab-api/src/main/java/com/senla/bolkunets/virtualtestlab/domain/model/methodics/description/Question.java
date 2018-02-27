@@ -1,4 +1,4 @@
-package com.senla.bolkunets.virtualtestlab.domain.methodics.description;
+package com.senla.bolkunets.virtualtestlab.domain.model.methodics.description;
 
 import javax.persistence.*;
 
