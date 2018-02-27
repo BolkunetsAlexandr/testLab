@@ -11,9 +11,15 @@
         <module>virtualtestlab-api</module>
         <module>virtualtestlab-dal</module>
         <module>virtualtestlab-services</module>
+        <module>virtualtestlab-controllers</module>
     </modules>
 
     <dependencies>
+        <dependency>
+            <groupId>com.senla.bolkunets</groupId>
+            <artifactId>virtualtestlab-dal</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
