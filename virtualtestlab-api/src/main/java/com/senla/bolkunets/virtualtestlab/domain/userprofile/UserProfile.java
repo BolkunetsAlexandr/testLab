@@ -3,7 +3,7 @@ package com.senla.bolkunets.virtualtestlab.domain.userprofile;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "SCALE_VALUES")
+@Table(name = "PROFILES_USER")
 public class UserProfile {
     @Id
     @GeneratedValue
@@ -15,10 +15,6 @@ public class UserProfile {
 
     @Column(name = "PASSWORD")
     private String password;
-
-    @Column(name = "TYPE_PROFILE")
-    @Enumerated(value = EnumType.STRING)
-    private TypeProfile typeProfile;
 
     @Column(name = "ROLE")
     private RoleUser roleUser;
@@ -47,13 +43,6 @@ public class UserProfile {
         this.password = password;
     }
 
-    public TypeProfile getTypeProfile() {
-        return typeProfile;
-    }
-
-    public void setTypeProfile(TypeProfile typeProfile) {
-        this.typeProfile = typeProfile;
-    }
 
     public RoleUser getRoleUser() {
         return roleUser;

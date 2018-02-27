@@ -19,9 +19,6 @@ public class Person {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @ManyToOne
-    private Organization organization;
-
     @Column(name = "AGE")
     private Integer integer;
 
@@ -54,14 +51,6 @@ public class Person {
 
     public void setGender(Gender gender) {
         this.gender = gender;
-    }
-
-    public Organization getOrganization() {
-        return organization;
-    }
-
-    public void setOrganization(Organization organization) {
-        this.organization = organization;
     }
 
     public Integer getInteger() {

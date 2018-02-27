@@ -18,7 +18,7 @@ public class ScaleValue {
     private Integer value;
 
     @ManyToOne
-    @JoinColumn(name = "METHODICS_ID")
+    @JoinColumn(name = "METHODICS_KEY_ID")
     private MethodicsKey methodicsKey;
 
 

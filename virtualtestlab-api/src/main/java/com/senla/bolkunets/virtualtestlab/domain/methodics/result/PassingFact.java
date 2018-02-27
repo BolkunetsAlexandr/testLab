@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "METHODICS")
+@Table(name = "PASSING_FACT")
 public class PassingFact {
     @Id
     @GeneratedValue
@@ -24,6 +24,7 @@ public class PassingFact {
     private Person person;
 
     @ManyToOne
+    @JoinColumn(name = "METHODICS_ID")
     private Methodics methodics;
 
     @OneToMany
