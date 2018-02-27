@@ -1,5 +1,7 @@
 package com.senla.bolkunets.virtualtestlab.domain.model.userprofile;
 
+import com.senla.bolkunets.virtualtestlab.domain.model.users.Person;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +17,10 @@ public class UserProfile {
 
     @Column(name = "PASSWORD", nullable = false)
     private String password;
+
+    @OneToOne
+    @JoinColumn("PERSON_ID")
+    private Person person;
 
     @Column(name = "ROLE", nullable = false)
     @Enumerated(value = EnumType.STRING)
@@ -51,5 +57,13 @@ public class UserProfile {
 
     public void setRoleUser(RoleUser roleUser) {
         this.roleUser = roleUser;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 }

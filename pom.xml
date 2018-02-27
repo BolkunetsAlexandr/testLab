@@ -10,6 +10,7 @@
     <modules>
         <module>virtualtestlab-api</module>
         <module>virtualtestlab-dal</module>
+        <module>virtualtestlab-services</module>
     </modules>
 
     <dependencies>
