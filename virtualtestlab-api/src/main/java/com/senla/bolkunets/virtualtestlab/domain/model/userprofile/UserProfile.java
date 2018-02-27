@@ -19,7 +19,7 @@ public class UserProfile {
     private String password;
 
     @OneToOne
-    @JoinColumn("PERSON_ID")
+    @JoinColumn(name = "PERSON_ID")
     private Person person;
 
     @Column(name = "ROLE", nullable = false)
