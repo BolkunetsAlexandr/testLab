@@ -14,7 +14,7 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
     private Class<Entity> type;
 
     @Autowired
-    protected EntityManagerFactory entityManagerFactory;
+    private EntityManagerFactory entityManagerFactory;
 
     public JpaAbstractDao(Class<Entity> type) {
         this.type = type;
@@ -22,7 +22,7 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
 
     @Transactional
     public void create(Entity entity) {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityManager entityManager = getEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
         entityManager.persist(entity);
@@ -33,7 +33,7 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
     @Transactional
     public Entity read(PKey id) {
         Entity entity;
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityManager entityManager = getEntityManager();
         entity = entityManager.find(type, id);
         entityManager.close();
         return entity;
@@ -41,7 +41,7 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
 
     @Transactional
     public void update(Entity entity) {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityManager entityManager = getEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
         entityManager.merge(entity);
@@ -51,7 +51,7 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
 
     @Transactional
     public void delete(Entity entity) {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityManager entityManager = getEntityManager();
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
         entityManager.remove(entityManager.contains(entity) ? entity : entityManager.merge(entity));
@@ -62,10 +62,14 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
     @Transactional
     public List<Entity> readAll() {
         List<Entity> entities = null;
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityManager entityManager = getEntityManager();
         entities = entityManager.createQuery("select entity from " + type.getSimpleName() + " entity ").getResultList();
         entityManager.close();
         return entities;
+    }
+
+    protected EntityManager getEntityManager(){
+        return entityManagerFactory.createEntityManager();
     }
 
 }

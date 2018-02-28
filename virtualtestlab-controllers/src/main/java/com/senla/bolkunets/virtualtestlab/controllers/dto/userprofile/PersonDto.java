@@ -1,4 +1,4 @@
-package com.senla.bolkunets.virtualtestlab.controllers.dto;
+package com.senla.bolkunets.virtualtestlab.controllers.dto.userprofile;
 
 import com.senla.bolkunets.virtualtestlab.domain.model.users.Gender;
 import com.senla.bolkunets.virtualtestlab.domain.model.users.MaritalStatus;

@@ -14,8 +14,9 @@ public class JpaUserProfileDao extends JpaAbstractDao<Integer, UserProfile> impl
 
     public UserProfile findUserByLogin(String login) {
         UserProfile userProfile = null;
-        EntityManager entityManager = super.entityManagerFactory.createEntityManager();
-        userProfile = (UserProfile) entityManager.createQuery("select user from UserProfile user where user.login = :login ")
+        EntityManager entityManager = super.getEntityManager();
+        userProfile = (UserProfile) entityManager
+                .createQuery("select user from UserProfile user where user.login = :login ")
                 .setParameter("login", login).getSingleResult();
         return userProfile;
     }

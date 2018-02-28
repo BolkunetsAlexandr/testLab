@@ -2,6 +2,7 @@ package com.senla.bolkunets.virtualtestlab.domain.model.users;
 
 
 import com.senla.bolkunets.virtualtestlab.domain.model.methodics.result.PassingFact;
+import com.senla.bolkunets.virtualtestlab.domain.model.userprofile.UserProfile;
 
 import javax.persistence.*;
 import java.util.List;
@@ -32,6 +33,9 @@ public class Person {
     @Column(name = "PLACE_RESIDENCE")
     @Enumerated(EnumType.STRING)
     private PlaceResidence placeResidence;
+
+    @OneToOne(mappedBy = "person")
+    private UserProfile userProfile;
 
     @OneToMany(mappedBy = "person")
     private List<PassingFact> passingFacts;
@@ -83,5 +87,21 @@ public class Person {
 
     public void setPlaceResidence(PlaceResidence placeResidence) {
         this.placeResidence = placeResidence;
+    }
+
+    public UserProfile getUserProfile() {
+        return userProfile;
+    }
+
+    public void setUserProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
+    }
+
+    public List<PassingFact> getPassingFacts() {
+        return passingFacts;
+    }
+
+    public void setPassingFacts(List<PassingFact> passingFacts) {
+        this.passingFacts = passingFacts;
     }
 }

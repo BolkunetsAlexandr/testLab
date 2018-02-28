@@ -15,7 +15,7 @@ public class MethodicsKey {
     @Column(name = "SCALE_NAME", nullable = false)
     private String nameScale;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "KEY_ID")
     private List<Question> questions;
 

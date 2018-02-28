@@ -10,4 +10,7 @@ public class JpaMethodicsDao extends JpaAbstractDao<Integer, Methodics> implemen
         super(Methodics.class);
     }
 
+    public Methodics getMethodicsByName(String name) {
+        return null;
+    }
 }
