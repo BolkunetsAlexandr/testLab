@@ -16,6 +16,14 @@ public class MethodicsServiceImpl implements MethodicsService {
         this.methodicsDao = methodicsDao;
     }
 
+    public void createMethodics(Methodics methodics) {
+        methodicsDao.create(methodics);
+    }
+
+    public void deleteMethodics(Methodics methodics) {
+
+    }
+
     public List<Methodics> getAllMethodicsDescriptions() {
         return methodicsDao.readAll();
     }

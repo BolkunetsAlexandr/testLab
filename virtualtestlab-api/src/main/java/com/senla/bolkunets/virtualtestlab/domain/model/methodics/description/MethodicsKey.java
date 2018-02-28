@@ -15,10 +15,6 @@ public class MethodicsKey {
     @Column(name = "SCALE_NAME", nullable = false)
     private String nameScale;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "KEY_ID")
-    private List<Question> questions;
-
     public Integer getId() {
         return id;
     }
@@ -33,13 +29,5 @@ public class MethodicsKey {
 
     public void setNameScale(String nameScale) {
         this.nameScale = nameScale;
-    }
-
-    public List<Question> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(List<Question> questions) {
-        this.questions = questions;
     }
 }

@@ -1,7 +1,7 @@
 package com.senla.bolkunets.virtualtestlab.controllers;
 
-import com.senla.bolkunets.virtualtestlab.controllers.dto.methodics.MethodicsDescriptionDto;
-import com.senla.bolkunets.virtualtestlab.controllers.dto.methodics.MethodicsWithQuestionsDto;
+import com.senla.bolkunets.virtualtestlab.controllers.dto.methodics.description.MethodicsDescriptionDto;
+import com.senla.bolkunets.virtualtestlab.controllers.dto.methodics.description.MethodicsWithQuestionsDto;
 import com.senla.bolkunets.virtualtestlab.domain.model.methodics.description.Methodics;
 import com.senla.bolkunets.virtualtestlab.domain.services.MethodicsService;
 import org.dozer.DozerBeanMapper;

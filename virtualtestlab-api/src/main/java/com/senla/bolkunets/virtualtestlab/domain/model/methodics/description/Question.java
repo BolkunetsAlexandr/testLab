@@ -16,6 +16,10 @@ public class Question {
     @Column(name = "TEXT", nullable = false)
     private String text;
 
+    @ManyToOne
+    @JoinColumn(name = "KEY_ID")
+    private MethodicsKey methodicsKey;
+
     public Integer getId() {
         return id;
     }

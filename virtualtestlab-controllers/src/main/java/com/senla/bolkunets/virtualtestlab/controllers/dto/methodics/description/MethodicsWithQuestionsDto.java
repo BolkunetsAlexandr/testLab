@@ -1,4 +1,4 @@
-package com.senla.bolkunets.virtualtestlab.controllers.dto.methodics;
+package com.senla.bolkunets.virtualtestlab.controllers.dto.methodics.description;
 
 import java.util.List;
 

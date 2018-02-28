@@ -1,5 +1,7 @@
 package com.senla.bolkunets.virtualtestlab.domain.model.methodics.description;
 
+import com.senla.bolkunets.virtualtestlab.domain.model.methodics.result.PassingFact;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -24,9 +26,12 @@ public class Methodics {
     @JoinColumn(name = "METHODICS_ID")
     private List<Question> questions;
 
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "METHODICS_ID")
     private List<MethodicsKey> keys;
+
+    @OneToMany(mappedBy = "methodicsId")
+    private List<PassingFact> passingMethodics;
 
 
     public Integer getId() {

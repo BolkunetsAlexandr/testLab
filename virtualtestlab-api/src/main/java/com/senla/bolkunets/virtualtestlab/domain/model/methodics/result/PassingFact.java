@@ -23,11 +23,10 @@ public class PassingFact {
     @JoinColumn(name = "PEOPLE_ID", nullable = false)
     private Person person;
 
-    @ManyToOne
-    @JoinColumn(name = "METHODICS_ID", nullable = false)
-    private Methodics methodics;
+    @Column(name = "METHODICS_ID", nullable = false)
+    private Integer methodicsId;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "SCALE_VALUE_ID")
     private List<ScaleValue> scaleValues;
 
@@ -55,12 +54,12 @@ public class PassingFact {
         this.person = person;
     }
 
-    public Methodics getMethodics() {
-        return methodics;
+    public Integer getMethodicsId() {
+        return methodicsId;
     }
 
-    public void setMethodics(Methodics methodics) {
-        this.methodics = methodics;
+    public void setMethodicsId(Integer methodicsId) {
+        this.methodicsId = methodicsId;
     }
 
     public List<ScaleValue> getScaleValues() {

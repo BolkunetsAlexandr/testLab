@@ -1,4 +1,4 @@
-package com.senla.bolkunets.virtualtestlab.controllers.dto.methodics;
+package com.senla.bolkunets.virtualtestlab.controllers.dto.methodics.description;
 
 public class QuestionsDto {
     private Integer id;

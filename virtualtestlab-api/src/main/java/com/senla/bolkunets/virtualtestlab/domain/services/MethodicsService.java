@@ -6,6 +6,10 @@ import java.util.List;
 
 public interface MethodicsService {
 
+    void createMethodics(Methodics methodics);
+
+    void deleteMethodics(Methodics methodics);
+
     List<Methodics> getAllMethodicsDescriptions();
 
     Methodics findById(Integer id);
