@@ -1,8 +1,10 @@
 package com.senla.bolkunets.virtualtestlab.domain.model.userprofile;
 
+import com.senla.bolkunets.virtualtestlab.domain.model.methodics.description.Methodics;
 import com.senla.bolkunets.virtualtestlab.domain.model.users.Person;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "PROFILES_USER")
@@ -25,6 +27,9 @@ public class UserProfile {
     @Column(name = "ROLE", nullable = false)
     @Enumerated(value = EnumType.STRING)
     private RoleUser roleUser;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    private List<Methodics> openMethodicsForUser;
 
     public Integer getId() {
         return id;
@@ -50,6 +55,13 @@ public class UserProfile {
         this.password = password;
     }
 
+    public List<Methodics> getOpenMethodicsForUser() {
+        return openMethodicsForUser;
+    }
+
+    public void setOpenMethodicsForUser(List<Methodics> openMethodicsForUser) {
+        this.openMethodicsForUser = openMethodicsForUser;
+    }
 
     public RoleUser getRoleUser() {
         return roleUser;

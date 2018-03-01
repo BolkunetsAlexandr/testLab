@@ -3,7 +3,7 @@ package com.senla.bolkunets.virtualtestlab.domain.dao;
 import java.util.List;
 
 public interface GenericDao<PKey, Entity> {
-    void create(Entity entity);
+    Entity create(Entity entity);
 
     Entity read(PKey id);
 

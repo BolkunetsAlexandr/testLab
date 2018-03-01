@@ -8,5 +8,19 @@ public class PassingFactDto {
 
     private List<AnswerQuestionDto> list;
 
+    public Integer getMethodicsId() {
+        return methodicsId;
+    }
 
+    public void setMethodicsId(Integer methodicsId) {
+        this.methodicsId = methodicsId;
+    }
+
+    public List<AnswerQuestionDto> getList() {
+        return list;
+    }
+
+    public void setList(List<AnswerQuestionDto> list) {
+        this.list = list;
+    }
 }

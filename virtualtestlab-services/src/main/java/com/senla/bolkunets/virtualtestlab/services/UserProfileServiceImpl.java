@@ -14,8 +14,8 @@ public class UserProfileServiceImpl implements UserProfileService {
         this.userProfileDao = userProfileDao;
     }
 
-    public void createUserProfile(UserProfile userProfile) {
-        userProfileDao.create(userProfile);
+    public UserProfile createUserProfile(UserProfile userProfile) {
+       return userProfileDao.create(userProfile);
     }
 
     public void deleteUserProfile(UserProfile userProfile) {
@@ -25,4 +25,5 @@ public class UserProfileServiceImpl implements UserProfileService {
     public UserProfile findUserProfileByLogin(String login) {
         return userProfileDao.findUserByLogin(login);
     }
+
 }

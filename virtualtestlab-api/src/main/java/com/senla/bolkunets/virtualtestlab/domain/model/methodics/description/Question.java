@@ -44,5 +44,11 @@ public class Question {
         this.number = number;
     }
 
+    public MethodicsKey getMethodicsKey() {
+        return methodicsKey;
+    }
 
+    public void setMethodicsKey(MethodicsKey methodicsKey) {
+        this.methodicsKey = methodicsKey;
+    }
 }

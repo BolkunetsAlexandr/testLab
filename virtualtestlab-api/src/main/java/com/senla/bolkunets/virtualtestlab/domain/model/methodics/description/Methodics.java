@@ -4,6 +4,7 @@ import com.senla.bolkunets.virtualtestlab.domain.model.methodics.result.PassingF
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "METHODICS")
@@ -24,15 +25,11 @@ public class Methodics {
 
     @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "METHODICS_ID")
-    private List<Question> questions;
+    private Set<Question> questions;
 
     @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "METHODICS_ID")
     private List<MethodicsKey> keys;
-
-    @OneToMany(mappedBy = "methodicsId")
-    private List<PassingFact> passingMethodics;
-
 
     public Integer getId() {
         return id;
@@ -74,11 +71,11 @@ public class Methodics {
         this.rightValueBorder = rightValueBorder;
     }
 
-    public List<Question> getQuestions() {
+    public Set<Question> getQuestions() {
         return questions;
     }
 
-    public void setQuestions(List<Question> questions) {
+    public void setQuestions(Set<Question> questions) {
         this.questions = questions;
     }
 

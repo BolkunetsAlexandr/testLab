@@ -14,4 +14,6 @@ public interface MethodicsService {
 
     Methodics findById(Integer id);
 
+    List<Methodics> getMethodicsByUserProfile(Integer userProfileId);
+
 }

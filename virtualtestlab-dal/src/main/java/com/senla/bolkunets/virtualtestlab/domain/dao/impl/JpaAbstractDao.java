@@ -16,18 +16,20 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
     @Autowired
     private EntityManagerFactory entityManagerFactory;
 
+    private EntityManager entityManager;
+
     public JpaAbstractDao(Class<Entity> type) {
         this.type = type;
     }
 
     @Transactional
-    public void create(Entity entity) {
+    public Entity create(Entity entity) {
         EntityManager entityManager = getEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
         entityManager.persist(entity);
         transaction.commit();
-        entityManager.close();
+        return entity;
     }
 
     @Transactional
@@ -35,7 +37,6 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
         Entity entity;
         EntityManager entityManager = getEntityManager();
         entity = entityManager.find(type, id);
-        entityManager.close();
         return entity;
     }
 
@@ -46,7 +47,6 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
         transaction.begin();
         entityManager.merge(entity);
         transaction.commit();
-        entityManager.close();
     }
 
     @Transactional
@@ -56,7 +56,6 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
         entityTransaction.begin();
         entityManager.remove(entityManager.contains(entity) ? entity : entityManager.merge(entity));
         entityTransaction.commit();
-        entityManager.close();
     }
 
     @Transactional
@@ -64,12 +63,14 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
         List<Entity> entities = null;
         EntityManager entityManager = getEntityManager();
         entities = entityManager.createQuery("select entity from " + type.getSimpleName() + " entity ").getResultList();
-        entityManager.close();
         return entities;
     }
 
     protected EntityManager getEntityManager(){
-        return entityManagerFactory.createEntityManager();
+        if(entityManager==null || !entityManager.isOpen() ){
+            entityManager = entityManagerFactory.createEntityManager();
+        }
+        return entityManager;
     }
 
 }
