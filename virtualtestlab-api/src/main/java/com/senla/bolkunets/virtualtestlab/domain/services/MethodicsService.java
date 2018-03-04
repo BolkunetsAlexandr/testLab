@@ -6,14 +6,15 @@ import java.util.List;
 
 public interface MethodicsService {
 
-    void createMethodics(Methodics methodics);
+    Methodics createMethodics(Methodics methodics);
 
     void deleteMethodics(Methodics methodics);
 
-    List<Methodics> getAllMethodicsDescriptions();
+    List<Methodics> getAllMethodics();
 
     Methodics findById(Integer id);
 
     List<Methodics> getMethodicsByUserProfile(Integer userProfileId);
 
+    Methodics deleteMethodicsById(Integer id);
 }

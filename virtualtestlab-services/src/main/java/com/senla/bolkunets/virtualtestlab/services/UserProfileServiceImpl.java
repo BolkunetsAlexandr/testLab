@@ -1,6 +1,6 @@
 package com.senla.bolkunets.virtualtestlab.services;
 
-import com.senla.bolkunets.virtualtestlab.domain.dao.UserProfileDao;
+import com.senla.bolkunets.virtualtestlab.domain.dao.user.UserProfileDao;
 import com.senla.bolkunets.virtualtestlab.domain.model.userprofile.UserProfile;
 import com.senla.bolkunets.virtualtestlab.domain.services.UserProfileService;
 import org.springframework.stereotype.Service;

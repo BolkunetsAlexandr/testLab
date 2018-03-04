@@ -1,6 +1,6 @@
 package com.senla.bolkunets.virtualtestlab.domain.dao.impl;
 
-import com.senla.bolkunets.virtualtestlab.domain.dao.MethodicsDao;
+import com.senla.bolkunets.virtualtestlab.domain.dao.methodics.MethodicsDao;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -12,5 +12,7 @@ class JpaMethodicsDaoTest {
 
     @Autowired
     private MethodicsDao methodicsDao;
+
+
 
 }

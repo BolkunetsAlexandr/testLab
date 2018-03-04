@@ -1,5 +1,6 @@
-package com.senla.bolkunets.virtualtestlab.domain.dao;
+package com.senla.bolkunets.virtualtestlab.domain.dao.methodics;
 
+import com.senla.bolkunets.virtualtestlab.domain.dao.GenericDao;
 import com.senla.bolkunets.virtualtestlab.domain.model.methodics.description.Methodics;
 
 import java.util.List;

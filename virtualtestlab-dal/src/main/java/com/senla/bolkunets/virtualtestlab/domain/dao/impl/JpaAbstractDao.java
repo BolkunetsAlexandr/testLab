@@ -22,6 +22,13 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
         this.type = type;
     }
 
+    protected EntityManager getEntityManager(){
+        if(entityManager==null || !entityManager.isOpen() ){
+            entityManager = entityManagerFactory.createEntityManager();
+        }
+        return entityManager;
+    }
+
     @Transactional
     public Entity create(Entity entity) {
         EntityManager entityManager = getEntityManager();
@@ -66,11 +73,6 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
         return entities;
     }
 
-    protected EntityManager getEntityManager(){
-        if(entityManager==null || !entityManager.isOpen() ){
-            entityManager = entityManagerFactory.createEntityManager();
-        }
-        return entityManager;
-    }
+
 
 }

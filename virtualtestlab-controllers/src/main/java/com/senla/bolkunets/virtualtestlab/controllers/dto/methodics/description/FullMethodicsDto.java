@@ -3,16 +3,17 @@ package com.senla.bolkunets.virtualtestlab.controllers.dto.methodics.description
 import java.util.List;
 
 public class FullMethodicsDto extends MethodicsDescriptionDto {
-    private List<QuestionsWithKeyIdDto> questionsWithKeyList;
+
+    private List<QuestionsDto> questionsDtos;
 
     private List<MethodicsKeyDto> methodicsKeyDtoList;
 
-    public List<QuestionsWithKeyIdDto> getQuestionsWithKeyList() {
-        return questionsWithKeyList;
+    public List<QuestionsDto> getQuestionsDtos() {
+        return questionsDtos;
     }
 
-    public void setQuestionsWithKeyList(List<QuestionsWithKeyIdDto> questionsWithKeyList) {
-        this.questionsWithKeyList = questionsWithKeyList;
+    public void setQuestionsDtos(List<QuestionsDto> questionsDtos) {
+        this.questionsDtos = questionsDtos;
     }
 
     public List<MethodicsKeyDto> getMethodicsKeyDtoList() {

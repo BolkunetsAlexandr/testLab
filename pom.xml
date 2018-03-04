@@ -7,10 +7,24 @@
     <packaging>pom</packaging>
     <name>virtualtestlab</name>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <modules>
         <module>virtualtestlab-api</module>
         <module>virtualtestlab-dal</module>
         <module>virtualtestlab-services</module>
+        <module>virtualtestlab-security</module>
         <module>virtualtestlab-controllers</module>
     </modules>
 

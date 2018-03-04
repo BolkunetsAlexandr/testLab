@@ -1,17 +1,10 @@
 package com.senla.bolkunets.virtualtestlab.domain.dao.impl;
 
-import com.senla.bolkunets.virtualtestlab.domain.dao.UserProfileDao;
-import com.senla.bolkunets.virtualtestlab.domain.model.methodics.description.Methodics;
+import com.senla.bolkunets.virtualtestlab.domain.dao.user.UserProfileDao;
 import com.senla.bolkunets.virtualtestlab.domain.model.userprofile.UserProfile;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.JoinType;
-import javax.persistence.criteria.Root;
-import java.util.List;
 
 @Repository
 public class JpaUserProfileDao extends JpaAbstractDao<Integer, UserProfile> implements UserProfileDao {

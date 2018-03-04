@@ -1,10 +1,9 @@
 package com.senla.bolkunets.virtualtestlab.controllers;
 
+import com.senla.bolkunets.virtualtestlab.controllers.dto.converters.MethodicsDtoToModelConverter;
 import com.senla.bolkunets.virtualtestlab.controllers.dto.methodics.description.*;
 import com.senla.bolkunets.virtualtestlab.domain.model.methodics.description.Methodics;
-import com.senla.bolkunets.virtualtestlab.domain.model.userprofile.UserProfile;
 import com.senla.bolkunets.virtualtestlab.domain.services.MethodicsService;
-import com.senla.bolkunets.virtualtestlab.domain.services.UserProfileService;
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +16,9 @@ import java.util.List;
 public class MethodicsController {
 
     @Autowired
+    private MethodicsDtoToModelConverter methodicsDtoToModelConverter;
+
+    @Autowired
     private MethodicsService methodicsService;
 
     @Autowired
@@ -26,7 +28,7 @@ public class MethodicsController {
     @ResponseBody
     public List<MethodicsDescriptionDto> getAllDescriptionsMethodics(){
         final List<MethodicsDescriptionDto> methodicsDescriptionDtoList = new ArrayList<MethodicsDescriptionDto>();
-        List<Methodics> allMethodicsDescriptions = methodicsService.getAllMethodicsDescriptions();
+        List<Methodics> allMethodicsDescriptions = methodicsService.getAllMethodics();
         for(Methodics methodics : allMethodicsDescriptions){
             MethodicsDescriptionDto methodicsDescriptionDto = dozerBeanMapper.map(methodics, MethodicsDescriptionDto.class);
             methodicsDescriptionDtoList.add(methodicsDescriptionDto);
@@ -65,13 +67,18 @@ public class MethodicsController {
     @RequestMapping(value = "/methodics/create", method = RequestMethod.POST)
     @ResponseBody
     public MethodicsDescriptionDto createMethodics(@RequestBody FullMethodicsDto methodicsDto){
-
-        //TODO
-        List<MethodicsKeyDto> methodicsKeyDtoList = methodicsDto.getMethodicsKeyDtoList();
-        List<QuestionsWithKeyIdDto> questionsWithKeyList = methodicsDto.getQuestionsWithKeyList();
-
-
-        return null;
-
+        Methodics methodics = methodicsDtoToModelConverter.convertNewMethodics(methodicsDto);
+        Methodics persistMethodics = methodicsService.createMethodics(methodics);
+        MethodicsDescriptionDto methodicsDescriptionDto = dozerBeanMapper.map(persistMethodics, MethodicsDescriptionDto.class);
+        return methodicsDescriptionDto;
     }
+
+    @RequestMapping(value = "/methodics/delete/{id}", method = RequestMethod.POST)
+    @ResponseBody
+    public MethodicsDescriptionDto createMethodics(@PathVariable(name = "id") Integer id){
+        Methodics methodics = methodicsService.deleteMethodicsById(id);
+        return dozerBeanMapper.map(methodics, MethodicsDescriptionDto.class);
+    }
+
+
 }

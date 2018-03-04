@@ -1,9 +1,6 @@
 package com.senla.bolkunets.virtualtestlab.domain.services;
 
-import com.senla.bolkunets.virtualtestlab.domain.model.methodics.description.Methodics;
 import com.senla.bolkunets.virtualtestlab.domain.model.userprofile.UserProfile;
-
-import java.util.List;
 
 public interface UserProfileService {
 

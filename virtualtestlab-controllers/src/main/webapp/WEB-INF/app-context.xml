@@ -16,5 +16,6 @@
 
 
     <bean class="org.dozer.DozerBeanMapper"/>
+    <bean class="com.senla.bolkunets.virtualtestlab.controllers.dto.converters.MethodicsDtoToModelConverterImpl"/>
 
 </beans>
