@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 
 @Repository
-public class JpaUserProfileDao extends JpaAbstractDao<Integer, UserProfile> implements UserProfileDao {
-    public JpaUserProfileDao() {
+public class UserProfileDaoImpl extends AbstractDao<Integer, UserProfile> implements UserProfileDao {
+    public UserProfileDaoImpl() {
         super(UserProfile.class);
     }
 

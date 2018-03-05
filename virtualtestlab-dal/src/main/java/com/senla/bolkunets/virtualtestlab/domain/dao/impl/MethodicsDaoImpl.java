@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 
 @Repository
-public class JpaMethodicsDao extends JpaAbstractDao<Integer, Methodics> implements MethodicsDao {
-    public JpaMethodicsDao() {
+public class MethodicsDaoImpl extends AbstractDao<Integer, Methodics> implements MethodicsDao {
+    public MethodicsDaoImpl() {
         super(Methodics.class);
     }
 

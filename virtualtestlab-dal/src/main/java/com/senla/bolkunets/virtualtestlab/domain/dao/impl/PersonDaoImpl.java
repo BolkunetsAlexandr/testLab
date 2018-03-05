@@ -5,8 +5,8 @@ import com.senla.bolkunets.virtualtestlab.domain.model.user.Person;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class JpaPersonDao extends JpaAbstractDao<Integer, Person> implements PersonDao {
-    public JpaPersonDao() {
+public class PersonDaoImpl extends AbstractDao<Integer, Person> implements PersonDao {
+    public PersonDaoImpl() {
         super(Person.class);
     }
 }

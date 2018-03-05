@@ -9,9 +9,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import java.util.List;
 
-public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, Entity> {
+public abstract class AbstractDao<PKey, Entity> implements GenericDao<PKey, Entity> {
 
-    private Logger log = Logger.getLogger(JpaAbstractDao.class);
+    private Logger log = Logger.getLogger(AbstractDao.class);
 
     private Class<Entity> type;
 
@@ -20,7 +20,7 @@ public abstract class JpaAbstractDao<PKey, Entity> implements GenericDao<PKey, E
 
     private EntityManager entityManager;
 
-    public JpaAbstractDao(Class<Entity> type) {
+    public AbstractDao(Class<Entity> type) {
         this.type = type;
     }
 

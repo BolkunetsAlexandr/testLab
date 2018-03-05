@@ -5,8 +5,8 @@ import com.senla.bolkunets.virtualtestlab.domain.model.methodics.result.PassingF
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class JpaPassingFactDao extends JpaAbstractDao<Integer, PassingFact> implements PassingFactDao {
-    public JpaPassingFactDao() {
+public class PassingFactDaoImpl extends AbstractDao<Integer, PassingFact> implements PassingFactDao {
+    public PassingFactDaoImpl() {
         super(PassingFact.class);
     }
 }

@@ -21,7 +21,7 @@ import static  org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(value = "classpath:spring-test-dao.xml")
-public class JpaMethodicsDaoTest {
+public class JpaMethodicsDaoImplTest {
 
     private static final String NAME = "name";
     private static final String DESCRIPTION = "description";
