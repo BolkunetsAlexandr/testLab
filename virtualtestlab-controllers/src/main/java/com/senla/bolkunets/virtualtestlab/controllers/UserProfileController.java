@@ -10,6 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class UserProfileController {
 
@@ -31,10 +34,18 @@ public class UserProfileController {
 
 
     @RequestMapping(value = "/users/{login}", method = RequestMethod.GET)
-    public ResponseEntity getAllUsers(@PathVariable String login){
+    public ResponseEntity getUsersByLogin(@PathVariable String login){
         UserProfile userProfile = userProfileService.findUserProfileByLogin(login);
         UserProfileDto userProfileDto = dozerBeanMapper.map(userProfile, UserProfileDto.class);
         return ResponseEntity.status(HttpStatus.OK).body(userProfileDto);
+    }
+
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    public ResponseEntity getAllUsers(){
+        List<UserProfileDto> response = new ArrayList<>();
+        List<UserProfile> userProfile = userProfileService.getUsers();
+        userProfile.forEach(x-> response.add(dozerBeanMapper.map(x, UserProfileDto.class)));
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
 }

@@ -11,7 +11,7 @@ import java.util.List;
 @Table(name = "PASSING_FACT")
 public class PassingFact {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Integer id;
 

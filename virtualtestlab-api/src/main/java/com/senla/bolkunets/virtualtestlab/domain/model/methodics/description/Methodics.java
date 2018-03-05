@@ -4,6 +4,7 @@ import com.senla.bolkunets.virtualtestlab.domain.model.methodics.result.PassingF
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -11,7 +12,7 @@ import java.util.Set;
 public class Methodics {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Integer id;
     @Column(name = "NAME", nullable = false)
@@ -85,5 +86,22 @@ public class Methodics {
 
     public void setKeys(List<MethodicsKey> keys) {
         this.keys = keys;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Methodics methodics = (Methodics) o;
+        return Objects.equals(id, methodics.id) &&
+                Objects.equals(name, methodics.name) &&
+                Objects.equals(description, methodics.description) &&
+                Objects.equals(leftValueBorder, methodics.leftValueBorder) &&
+                Objects.equals(rightValueBorder, methodics.rightValueBorder);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, leftValueBorder, rightValueBorder);
     }
 }

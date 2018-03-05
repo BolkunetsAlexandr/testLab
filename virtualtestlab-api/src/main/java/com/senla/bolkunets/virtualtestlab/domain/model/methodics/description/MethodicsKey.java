@@ -8,7 +8,7 @@ import java.util.List;
 @Table(name = "METHODICS_KEYS")
 public class MethodicsKey {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Integer id;
 

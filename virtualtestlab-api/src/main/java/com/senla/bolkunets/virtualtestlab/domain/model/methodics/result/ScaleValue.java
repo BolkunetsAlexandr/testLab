@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class ScaleValue {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Integer id;
 

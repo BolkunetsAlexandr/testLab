@@ -4,7 +4,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:testhibernate.properties.properties"></context:property-placeholder>
+    <context:property-placeholder location="classpath:testhibernate.properties"></context:property-placeholder>
 
     <beans>
 
@@ -18,13 +18,14 @@
             </property>
             <property name="jpaProperties">
                 <props>
-                    <prop key="hibernate.hbm2ddl.auto" >${hibernate.hbm2ddl.auto}</prop>
+                    <prop key="hibernate.hbm2ddl.auto" >create-drop</prop>
+                    <prop key="hibernate.dialect">org.hibernate.dialect.DerbyTenFiveDialect</prop>
                 </props>
             </property>
         </bean>
         <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-            <property name="driverClassName" value="${jdbcdriver}"/>
-            <property name="url" value="${url}"/>
+            <property name="driverClassName" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+            <property name="url" value="jdbc:derby:memory:virtualtestlab;create=true"/>
         </bean>
 
         <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">

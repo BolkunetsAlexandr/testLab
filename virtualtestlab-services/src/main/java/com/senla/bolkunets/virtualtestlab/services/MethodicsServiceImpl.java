@@ -21,8 +21,8 @@ public class MethodicsServiceImpl implements MethodicsService {
         this.userProfileDao = userProfileDao;
     }
 
-    public void createMethodics(Methodics methodics) {
-        methodicsDao.create(methodics);
+    public Methodics createMethodics(Methodics methodics) {
+       return methodicsDao.create(methodics);
     }
 
     public void deleteMethodics(Methodics methodics) {
@@ -42,6 +42,11 @@ public class MethodicsServiceImpl implements MethodicsService {
         if(userProfile!=null){
             return userProfile.getOpenMethodicsForUser();
         }
+        return null;
+    }
+
+    @Override
+    public Methodics deleteMethodicsById(Integer id) {
         return null;
     }
 }
