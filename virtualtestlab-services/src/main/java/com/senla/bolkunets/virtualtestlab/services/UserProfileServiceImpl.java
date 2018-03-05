@@ -5,6 +5,8 @@ import com.senla.bolkunets.virtualtestlab.domain.model.userprofile.UserProfile;
 import com.senla.bolkunets.virtualtestlab.domain.services.UserProfileService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserProfileServiceImpl implements UserProfileService {
 
@@ -24,6 +26,11 @@ public class UserProfileServiceImpl implements UserProfileService {
 
     public UserProfile findUserProfileByLogin(String login) {
         return userProfileDao.findUserByLogin(login);
+    }
+
+    @Override
+    public List<UserProfile> getUsers() {
+        return userProfileDao.readAll();
     }
 
 }
