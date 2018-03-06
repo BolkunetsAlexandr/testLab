@@ -15,14 +15,18 @@ import java.util.List;
 @Controller
 public class MethodicsController {
 
-    @Autowired
+
     private MethodicsDtoToModelConverter methodicsDtoToModelConverter;
 
-    @Autowired
     private MethodicsService methodicsService;
 
-    @Autowired
     private DozerBeanMapper dozerBeanMapper;
+
+    public MethodicsController(MethodicsDtoToModelConverter methodicsDtoToModelConverter, MethodicsService methodicsService, DozerBeanMapper dozerBeanMapper) {
+        this.methodicsDtoToModelConverter = methodicsDtoToModelConverter;
+        this.methodicsService = methodicsService;
+        this.dozerBeanMapper = dozerBeanMapper;
+    }
 
     @RequestMapping(value = "methodics/description/all", method = RequestMethod.GET)
     @ResponseBody

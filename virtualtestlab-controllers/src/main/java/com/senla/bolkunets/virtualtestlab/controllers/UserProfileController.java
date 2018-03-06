@@ -4,7 +4,6 @@ import com.senla.bolkunets.virtualtestlab.controllers.dto.userprofile.UserProfil
 import com.senla.bolkunets.virtualtestlab.domain.model.userprofile.UserProfile;
 import com.senla.bolkunets.virtualtestlab.domain.services.UserProfileService;
 import org.dozer.DozerBeanMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -16,12 +15,14 @@ import java.util.List;
 @Controller
 public class UserProfileController {
 
-    @Autowired
     private UserProfileService userProfileService;
 
-    @Autowired
     private DozerBeanMapper dozerBeanMapper;
 
+    public UserProfileController(UserProfileService userProfileService, DozerBeanMapper dozerBeanMapper) {
+        this.userProfileService = userProfileService;
+        this.dozerBeanMapper = dozerBeanMapper;
+    }
 
     @RequestMapping(value = "/users/create", method = RequestMethod.POST)
     @ResponseBody

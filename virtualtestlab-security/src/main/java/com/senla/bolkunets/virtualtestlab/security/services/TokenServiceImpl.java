@@ -4,23 +4,23 @@ import com.senla.bolkunets.virtualtestlab.security.model.User;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.impl.DefaultJwtBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+@Service
 public class TokenServiceImpl implements TokenService {
 
     @Autowired
     private UserDetailsService userDetailsService;
 
-    @Value("${token.secret}")
+    @Value("secret")
     private String secretKey;
 
     public TokenServiceImpl(UserDetailsService userDetailsService) {

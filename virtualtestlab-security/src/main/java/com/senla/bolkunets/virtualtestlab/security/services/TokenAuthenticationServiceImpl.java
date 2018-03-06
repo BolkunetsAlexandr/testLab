@@ -6,23 +6,30 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 
+@Service
 public class TokenAuthenticationServiceImpl implements TokenAuthenticationService {
 
     private static Logger logger = Logger.getLogger(TokenAuthenticationServiceImpl.class);
 
-    @Value("${token.secret}")
+    @Value("secret")
     private String key;
 
-    @Value("${auth.header.name}")
+    @Value("name")
     private String headerName;
 
     private UserDetailsService userDetailsService;
+
+    public TokenAuthenticationServiceImpl(UserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
 
     @Override
     public Authentication authenticate(HttpServletRequest request) {

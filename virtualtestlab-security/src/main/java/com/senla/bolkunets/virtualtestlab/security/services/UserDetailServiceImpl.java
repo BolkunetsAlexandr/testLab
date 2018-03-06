@@ -3,12 +3,13 @@ package com.senla.bolkunets.virtualtestlab.security.services;
 import com.senla.bolkunets.virtualtestlab.domain.dao.user.UserProfileDao;
 import com.senla.bolkunets.virtualtestlab.domain.model.userprofile.UserProfile;
 import com.senla.bolkunets.virtualtestlab.security.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-
+@Service
 public class UserDetailServiceImpl implements UserDetailsService {
 
     private UserProfileDao userProfileDao;
